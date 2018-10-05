@@ -1,4 +1,4 @@
-#include "LlistaBIO.h"
+#include "llista.h"
 #include <stdio.h>
 
 LlistaBIO LLISTABIO_crea(){
