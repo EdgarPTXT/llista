@@ -76,3 +76,7 @@ int LLISTABIO_consulta(LlistaBIO l){
 	}
 	return enter;
 }
+
+int LLISTABIO_buida(LlistaBIO l){
+	return l.pri == l.ult;
+}
