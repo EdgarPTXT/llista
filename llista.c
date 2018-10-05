@@ -112,3 +112,14 @@ int LLISTABIO_inici(LlistaBIO l){
 int LLISTABIO_fi(LlistaBIO l){
 	return l.pdi->seg == l.ult;
 }
+
+void LLISTABIO_destrueix(LlistaBIO * l){
+	Node * aux;
+	while(l->pri != NULL){
+		aux = l->pri;
+		l->pri = l->pri->seg;
+		free(aux);
+	}
+	l->ult = NULL;
+	l->pdi = NULL;
+}
