@@ -52,3 +52,16 @@ void LLISTABIO_insereixOrdenat(LlistaBIO * l, int num){
 		printf ("ERROR al inserir el nou element\n");
 	}
 }
+
+void LLISTABIO_esborra(LlistaBIO * l){
+	Node * aux;
+	if (l->pdi == l->pri || l->pdi == l->ult){
+		printf("ERROR estas fora la llista\n");
+	}else{
+		aux = l->pdi;
+		l->pdi->ant->seg = l->pdi->seg;
+		l->pdi->seg->ant = l->pdi->ant;
+		l->pdi = l->pdi->ant;
+		free(aux);
+	}
+}
