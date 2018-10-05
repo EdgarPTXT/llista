@@ -80,3 +80,7 @@ int LLISTABIO_consulta(LlistaBIO l){
 int LLISTABIO_buida(LlistaBIO l){
 	return l.pri == l.ult;
 }
+
+void LLISTABIO_vesInici(LlistaBIO * l){
+	l->pdi = l->pri->seg;
+}
