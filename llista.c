@@ -6,13 +6,13 @@ LlistaBIO LLISTABIO_crea(){
 	l.pri = (Node *) malloc (sizeof(Node));
 	if (l.pri != NULL){
 		l.ult = (Node *) malloc (sizeof(Node));
-		if (l.ant != NULL){
-			l.pri->seg = l.ant;
+		if (l.ult != NULL){
+			l.pri->seg = l.ult;
 			l.pri->ant = NULL;
 			l.ult->seg = NULL;
 			l.ult->ant = l.pri;
 			l.ult->enter = -999999999;
-			l.pri->enter = 9999999999;
+			l.pri->enter = 999999999;
 			l.pdi = l.pri;
 		}else{
 			printf("ERROR al crear la llista\n");
@@ -72,7 +72,7 @@ int LLISTABIO_consulta(LlistaBIO l){
 		printf("ERROR estas fora de la llista\n");
 		enter = 0;
 	}else{
-		enter = l.pdi->e;
+		enter = l.pdi->enter;
 	}
 	return enter;
 }
