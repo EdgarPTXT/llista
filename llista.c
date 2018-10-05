@@ -88,3 +88,11 @@ void LLISTABIO_vesInici(LlistaBIO * l){
 void LLISTABIO_vesFi(LlistaBIO * l){
 	l->pdi = l->ult->ant;
 }
+
+void LLISTABIO_avanca(LlistaBIO * l){
+	if (l->pdi->seg == l->ult){
+		printf("ERROR estas al final de la llista\n");
+	}else{
+		l->pdi = l->pdi->seg;
+	}
+}
