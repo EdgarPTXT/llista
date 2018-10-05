@@ -22,3 +22,33 @@ LlistaBIO LLISTABIO_crea(){
 	}
 	return l;
 }
+
+void LLISTABIO_insereixOrdenat(LlistaBIO * l, int num){
+	Node * aux;
+	aux = (Node *) malloc (sizeof(Node));
+	if (aux != NULL){
+		aux->enter = num;
+		l->pdi = l->pri;
+		if(l->pri->seg == l->ult){
+			aux->ant = l->pri;
+			aux->seg = l->ult;
+			l->pri->seg = aux;
+			l->ult->ant = aux;
+		}else{
+			int sortir = 0;
+			while (sortir == 0){
+				if(l->pdi->enter > num && l->pdi->seg != l->ult){
+					l->pdi = l->pdi->seg;
+				}else{
+					sortir = 1;
+				}
+			}
+			aux->ant = l->pdi->ant;
+			aux->seg = l->pdi;
+			l->pdi->ant = aux;
+			aux->ant->seg = aux;
+		}
+	}else{
+		printf ("ERROR al inserir el nou element\n");
+	}
+}
