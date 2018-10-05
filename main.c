@@ -55,5 +55,6 @@ int main (){
 			}
 		}
 	}
+	LLISTABIO_destrueix(&llista);
 	return 0;
 }
