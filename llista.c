@@ -104,3 +104,7 @@ void LLISTABIO_retrocedeix(LlistaBIO * l){
 		l->pdi = l->pdi->ant;
 	}
 }
+
+int LLISTABIO_inici(LlistaBIO l){
+	return l.pdi->ant == l.pri;
+}
