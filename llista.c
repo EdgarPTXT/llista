@@ -84,3 +84,7 @@ int LLISTABIO_buida(LlistaBIO l){
 void LLISTABIO_vesInici(LlistaBIO * l){
 	l->pdi = l->pri->seg;
 }
+
+void LLISTABIO_vesFi(LlistaBIO * l){
+	l->pdi = l->ult->ant;
+}
