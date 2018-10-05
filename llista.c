@@ -65,3 +65,14 @@ void LLISTABIO_esborra(LlistaBIO * l){
 		free(aux);
 	}
 }
+
+int LLISTABIO_consulta(LlistaBIO l){
+	int enter;
+	if(l.pdi == l.pri || l.pdi == l.ult){
+		printf("ERROR estas fora de la llista\n");
+		enter = 0;
+	}else{
+		enter = l.pdi->e;
+	}
+	return enter;
+}
