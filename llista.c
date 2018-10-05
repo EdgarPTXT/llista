@@ -108,3 +108,7 @@ void LLISTABIO_retrocedeix(LlistaBIO * l){
 int LLISTABIO_inici(LlistaBIO l){
 	return l.pdi->ant == l.pri;
 }
+
+int LLISTABIO_fi(LlistaBIO l){
+	return l.pdi->seg == l.ult;
+}
