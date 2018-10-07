@@ -1,5 +1,6 @@
 #include "llista.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 LlistaBIO LLISTABIO_crea(){
 	LlistaBIO l;
@@ -28,12 +29,13 @@ void LLISTABIO_insereixOrdenat(LlistaBIO * l, int num){
 	aux = (Node *) malloc (sizeof(Node));
 	if (aux != NULL){
 		aux->enter = num;
-		l->pdi = l->pri;
+		l->pdi = l->pri->seg;
 		if(l->pri->seg == l->ult){
 			aux->ant = l->pri;
 			aux->seg = l->ult;
 			l->pri->seg = aux;
 			l->ult->ant = aux;
+			l->pdi = l->pri->seg;
 		}else{
 			int sortir = 0;
 			while (sortir == 0){
@@ -90,7 +92,7 @@ void LLISTABIO_vesFi(LlistaBIO * l){
 }
 
 void LLISTABIO_avanca(LlistaBIO * l){
-	if (l->pdi->seg == l->ult){
+	if (l->pdi == l->ult){
 		printf("ERROR estas al final de la llista\n");
 	}else{
 		l->pdi = l->pdi->seg;
@@ -98,7 +100,7 @@ void LLISTABIO_avanca(LlistaBIO * l){
 }
 
 void LLISTABIO_retrocedeix(LlistaBIO * l){
-	if (l->pdi->ant == l->pri){
+	if (l->pdi == l->pri){
 		printf("ERROR estas a l'inicid de la llista\n");
 	}else{
 		l->pdi = l->pdi->ant;
@@ -106,11 +108,11 @@ void LLISTABIO_retrocedeix(LlistaBIO * l){
 }
 
 int LLISTABIO_inici(LlistaBIO l){
-	return l.pdi->ant == l.pri;
+	return l.pdi == l.pri;
 }
 
 int LLISTABIO_fi(LlistaBIO l){
-	return l.pdi->seg == l.ult;
+	return l.pdi == l.ult;
 }
 
 void LLISTABIO_destrueix(LlistaBIO * l){

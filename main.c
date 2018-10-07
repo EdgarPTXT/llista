@@ -48,10 +48,10 @@ int main (){
 
 		if (seleccio == 5){
 			LLISTABIO_vesInici(&llista);
-			while(!LLISTABIO_fi()){
+			while(!LLISTABIO_fi(llista)){
 				numero = LLISTABIO_consulta(llista);
-				LLISTABIO_avanca(&llista);
 				printf("%d\n", numero);
+				LLISTABIO_avanca(&llista);
 			}
 		}
 	}
