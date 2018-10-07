@@ -50,8 +50,8 @@ int main (){
 			LLISTABIO_vesInici(&llista);
 			while(!LLISTABIO_fi()){
 				numero = LLISTABIO_consulta(llista);
-				LLISTABIO_avanca(&llista);
 				printf("%d\n", numero);
+				LLISTABIO_avanca(&llista);
 			}
 		}
 	}
