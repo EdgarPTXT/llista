@@ -1,5 +1,6 @@
 #include "llista.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 LlistaBIO LLISTABIO_crea(){
 	LlistaBIO l;
