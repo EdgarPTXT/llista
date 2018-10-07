@@ -112,7 +112,7 @@ int LLISTABIO_inici(LlistaBIO l){
 }
 
 int LLISTABIO_fi(LlistaBIO l){
-	return l.pdi->seg == l.ult;
+	return l.pdi == l.ult;
 }
 
 void LLISTABIO_destrueix(LlistaBIO * l){
