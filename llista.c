@@ -29,12 +29,13 @@ void LLISTABIO_insereixOrdenat(LlistaBIO * l, int num){
 	aux = (Node *) malloc (sizeof(Node));
 	if (aux != NULL){
 		aux->enter = num;
-		l->pdi = l->pri;
+		l->pdi = l->pri->seg;
 		if(l->pri->seg == l->ult){
 			aux->ant = l->pri;
 			aux->seg = l->ult;
 			l->pri->seg = aux;
 			l->ult->ant = aux;
+			l->pdi = l->pri->seg;
 		}else{
 			int sortir = 0;
 			while (sortir == 0){
