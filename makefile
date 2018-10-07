@@ -3,10 +3,10 @@ all: llista
 llista: main.o llista.o
 
 main.o: main.c llista.h
-	gcc main.c -g -Wall -Wextra -ggdb
+	gcc -c main.c -o main.o -g -Wall -Wextra -ggdb
 
 llista.o: llista.c llista.h
-	gcc llista.c -g -Wall -Wextra -ggdb
+	gcc -c llita.c -o llista.o -g -Wall -Wextra -ggdb
 
 clean:
 	rm -rf *.o
