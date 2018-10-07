@@ -1,12 +1,12 @@
 all: llista
 
-llista: main.o LlistaBIO.o
+llista: main.o llista.o
 
-main.o: main.c LlistaBIO.h
+main.o: main.c llista.h
 	gcc main.c -g -Wall -Wextra -ggdb
 
-LlistaBIO.o: LlistaBIO.c LlistaBIO.h
-	gcc LlistaBIO.c -g -Wall -Wextra -ggdb
+llista.o: llista.c llista.h
+	gcc llista.c -g -Wall -Wextra -ggdb
 
 clean:
 	rm -rf *.o
