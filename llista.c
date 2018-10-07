@@ -100,7 +100,7 @@ void LLISTABIO_avanca(LlistaBIO * l){
 }
 
 void LLISTABIO_retrocedeix(LlistaBIO * l){
-	if (l->pdi->ant == l->pri){
+	if (l->pdi == l->pri){
 		printf("ERROR estas a l'inicid de la llista\n");
 	}else{
 		l->pdi = l->pdi->ant;
